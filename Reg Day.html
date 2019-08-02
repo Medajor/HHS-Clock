@@ -74,13 +74,7 @@
     //Do Not Change From Here Down Unless You Know What You're Doing//
 
     //set up clock
-    if (navigator.appName === "Netscape") {
-        document.write('<layer id="clock"></layer><br>');
-    }
-
-    if (navigator.appVersion.indexOf("MSIE") !== -1) {
-        document.write('<span id="clock"></span><br>');
-    }
+    document.write('<span id="clock"></span><br>');
 
     //clock function
     function upclock() {
@@ -107,7 +101,7 @@
         if (sec <= 9) sec = "0" + sec;
 
         let Bmin = Bells[AtBell + 1].min;
-        if (Bmi <= 9) Bmin = "0" + Bmin;
+        if (Bmin <= 9) Bmin = "0" + Bmin;
 
         bell = "<table width=60% align=center><tr><td><font size=7>Next:<br>" + Bells[AtBell + 1].info + " (" + Bells[AtBell + 1].hr + ":" + Bmin + ")</font></td></tr></table>";
 
@@ -120,10 +114,10 @@
                     AtBell = i;
                     if (sec < 10) {
                         bell = document.getElementById("bell").getAttribute("src");
-                        bell = "<div style="<img; height=200; width=400; src=Assets/bell.gif><br><span; style="font-size: xx-large; ">" + Bells[i].info + "</span></;div>";;
+                        //bell = "<div style="<img; height=200; width=400; src=Assets/bell.gif><br><span; style="font-size: xx-large; ">" + Bells[i].info + "</span></;div>";;
                         bellSound.play()
                     } else {
-                        bell = "<div style=";text-align;: center;"><img height=200 width=400 src=Assets/bell.gif><br><font size=7>" + Bells[i].info + "</font></div>";
+                        bell = "<div style=';text-align;: center;'><img height=200 width=400 src=Assets/bell.gif><br><font size=7>" + Bells[i].info + "</font></div>";
                     }
                 }
             }
@@ -164,21 +158,12 @@
         if (min <= 9) min = "0" + min;
 
         //write the page
-        if (navigator.appName === "Netscape") {
-            document.clock.document.write("<table width=579 align=center><tr><td background = background.bmp align =center height=200><br><font size=7>" + hrs + "<img src=Assets/colon.bmp>" + min + spc + apm + "</font></td></tr></table>" + bell);
-            document.clock.document.close();
-        }
-
-        if (navigator.appVersion.indexOf("MSIE") !== -1) {
-            clock.innerHTML = "<table width=579 align=center><tr><td background = background.bmp align =center height=200><br><font size=7>" + hrs + "<img src=Assets/colon.bmp>" + min + spc + apm + "</font></td></tr></table>" + bell;
-        }
+        clock.innerHTML = "<table width=579 align=center><tr><td background = background.bmp align =center height=200><br><font size=7>" + hrs + "<img src=Assets/colon.bmp>" + min + spc + apm + "</font></td></tr></table>" + bell;
     }
 
     let interval = setInterval("upclock()", 1000);
     //-->
-    <img; src="Assets/1.bmp";
-    height="157"
-    width="61"/></script>
+    </script>
 </HTML>
 <h1>Regular School Day</h1>
 <h2>Order yearbooks now at HHSToday.com</h2>
