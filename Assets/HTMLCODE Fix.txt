@@ -1,0 +1,184 @@
+<HTML>
+<body>
+
+<script language="Javascript1.2"> 
+
+var tags_before_clock = "<big><center>"
+var tags_after_clock  = "</center></big>"
+var Bells = new Array();
+var AtBell = 0;
+
+/*Bell Times
+Example:
+
+Bells[Bell#] = new Array();
+Bells[Bell#].hr = Hour;
+Bells[Bell#].min = Minute;
+Bells[Bell#].info = Period#;
+
+*/
+
+Bells[0] = new Array();
+Bells[0].hr = 9;
+Bells[0].min = 05;
+Bells[0].info = "To Homeroom";
+Bells[1] = new Array();
+Bells[1].hr = 9;
+Bells[1].min = 10;
+Bells[1].info = "Homeroom";
+Bells[2] = new Array();
+Bells[2].hr = 9; 
+Bells[2].min = 20;
+Bells[2].info = "To Block 12/22";
+Bells[3] = new Array();
+Bells[3].hr = 9; 
+Bells[3].min = 25;
+Bells[3].info = "Block 12/22";
+Bells[4] = new Array();
+Bells[4].hr =10; 
+Bells[4].min = 55;
+Bells[4].info = "To A Lunch";
+Bells[5] = new Array();
+Bells[5].hr = 11; 
+Bells[5].min = 35;
+Bells[5].info = "Block 13/23";
+Bells[6] = new Array();
+Bells[6].hr = 12; 
+Bells[6].min = 05;
+Bells[6].info = "To B Lunch Electives";
+Bells[7] = new Array();
+Bells[7].hr = 12; 
+Bells[7].min = 31;
+Bells[7].info = "C Lunch Electives back in JA";
+Bells[8] = new Array();
+Bells[8].hr = 1; 
+Bells[8].min = 05;
+Bells[8].info = "To Block 14/24";
+Bells[9] = new Array();
+Bells[9].hr = 1; 
+Bells[9].min = 11;
+Bells[9].info = "Block 14/24";
+Bells[10] = new Array();
+Bells[10].hr = 2; 
+Bells[10].min = 55;
+Bells[10].info = "Crikey Mates, Dismissal time";
+Bells[11] = new Array();
+Bells[11].hr = 0; 
+Bells[11].min = 0;
+Bells[11].info = "Next: First Block";
+
+//Do Not Change From Here Down Unless You Know What You're Doing//
+//Listen to him, Duncan M was here//
+//set up clock
+if(navigator.appName == "Netscape") {
+document.write('<layer id="clock"></layer><br>');
+}
+
+if (navigator.appVersion.indexOf("MSIE") != -1){
+document.write('<span id="clock"></span><br>');
+}
+
+//clock function
+function upclock(){ 
+var dte = new Date();
+var hrs = dte.getHours();
+var min = dte.getMinutes(); 
+var sec = dte.getSeconds();
+var col = ":";
+var spc = " ";
+var apm;
+var bell = "<img src=blank.bmp></img>";
+
+
+//AM/PM check
+if (11 < hrs) { 
+apm="PM";
+hrs-=12;
+}
+
+else {
+apm="AM";
+}
+
+//hours go to 0 at 12
+if (hrs == 0) hrs="12";
+if (sec<=9) sec="0"+sec;
+
+var Bmin = Bells[AtBell+1].min
+if (Bmin<=9) Bmin="0"+Bmin;
+
+bell = "<table width=60% align=center><tr><td><font size=7>Next:<br>"+Bells[AtBell+1] .info+" ("+Bells[AtBell+1].hr+":"+Bmin+")</font></td></tr></table>"
+
+//see if we have a scheduled bell
+for(var i = 0; i < Bells.length; i ++)
+{
+	if(hrs == Bells[i].hr){
+		if(min == Bells[i].min){
+			AtBell = i;
+			if( sec < 10){
+			bell = "<center><img height=200 width=400 src=bell.gif></img><br><font size=7>"+Bells[i].info+"</font><bgsound src=bell.wav></center>";
+			}
+			else{
+			bell = "<center><img height=200 width=400 src=bell.gif></img><br><font size=7>"+Bells[i].info+"</font></center>";
+			}
+		}
+	}
+	
+}
+
+//replace hours with the number pic
+if(hrs == 10){
+	hrs="<img src=1.bmp></img><img src=0.bmp></img>";
+}
+else if(hrs == 11){
+	hrs="<img src=1.bmp></img><img src=1.bmp></img>";
+}
+else if(hrs == 12){
+	hrs="<img src=1.bmp></img><img src=2.bmp></img>";
+}
+else{
+	hrs="<img src="+hrs+".bmp></img>";
+}
+
+//parse our minutes
+if(min < 10){
+	min = "<img src=0.bmp></img><img src="+min+".bmp></img>";
+}
+else if (min >=10 && min < 20){
+	min -= 10;
+	min = "<img src=1.bmp></img><img src="+min+".bmp></img>";
+}
+else if (min >= 20 && min <30){
+	min -= 20;
+	min = "<img src=2.bmp></img><img src="+min+".bmp></img>";
+}
+else if (min >= 30 && min <40){
+	min -= 30;
+	min = "<img src=3.bmp></img><img src="+min+".bmp></img>";
+}
+else if (min >= 40 && min <50){
+	min -= 40;
+	min = "<img src=4.bmp></img><img src="+min+".bmp></img>";
+}
+else if (min >= 50){
+	min -= 50;
+	min = "<img src=5.bmp></img><img src="+min+".bmp></img>";
+}
+
+if (min<=9) min="0"+min;
+
+//write the page
+if(navigator.appName == "Netscape") {
+document.clock.document.write("<table width=579 align=center><tr><td background = background.bmp align =center height=200><br><font size=7>"+hrs+"<img src=colon.bmp></img>"+min+spc+apm+"</font></td></tr></table>"+ bell);
+document.clock.document.close();
+}
+
+if (navigator.appVersion.indexOf("MSIE") != -1){
+clock.innerHTML = "<table width=579 align=center><tr><td background = background.bmp align =center height=200><br><font size=7>"+hrs+"<img src=colon.bmp></img>"+min+spc+apm+"</font></td></tr></table>"+ bell;
+}
+} 
+setInterval("upclock()",1000);
+//-->
+</script>
+</HTML>
+<h1>Regular School Day</h1>
