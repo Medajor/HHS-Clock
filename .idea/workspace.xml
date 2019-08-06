@@ -4,7 +4,30 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97e1aa62-4979-43c9-a3cc-3e4418061dff" name="Default Changelist" comment="" />
+    <list default="true" id="97e1aa62-4979-43c9-a3cc-3e4418061dff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/pbjtime.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/pbjtime.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AutoDay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AutoDayNewspaper.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EarlyReleaseDay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hour Homeroom First.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LastDay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PepRally.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RegDay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reg Day.html" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,21 +41,25 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>src=</find>
-      <find>&lt;/img&gt;</find>
-      <find>atbell</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>src=Assets/</replace>
-    </replaceStrings>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Medajor" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="ProjectId" id="1ORHcidPSfVbQmap9NoxpfWhvFl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -42,11 +69,16 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hirsh\Downloads\clock_original_fixed\Assets" />
+      <recent name="C:\Users\hirsh\Downloads\clock_original_fixed" />
       <recent name="C:\Users\hirsh\WebstormProjects\Clock\Assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hirsh\Downloads\clock_original_fixed\Assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -61,13 +93,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Reg Day.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Clock/Reg Day.html" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="JavaScript Debug.AutoDayNewspaper.html">
+    <configuration name="AutoDayNewspaper.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/newclock/AutoDayNewspaper.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="EarlyReleaseDay.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/newclock/EarlyReleaseDay.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Hour Homeroom First.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/newclock/Hour Homeroom First.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="LastDay.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/newclock/LastDay.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="PepRally.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/newclock/PepRally.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.Reg Day.html" />
+        <item itemvalue="JavaScript Debug.AutoDayNewspaper.html" />
+        <item itemvalue="JavaScript Debug.LastDay.html" />
+        <item itemvalue="JavaScript Debug.Hour Homeroom First.html" />
+        <item itemvalue="JavaScript Debug.PepRally.html" />
+        <item itemvalue="JavaScript Debug.EarlyReleaseDay.html" />
       </list>
     </recent_temporary>
   </component>
@@ -83,10 +131,28 @@
       <updated>1563735423511</updated>
       <workItem from="1563735424659" duration="4086000" />
       <workItem from="1563933571987" duration="143000" />
+      <workItem from="1564714383292" duration="11117000" />
+      <workItem from="1564857319723" duration="8128000" />
+      <workItem from="1564892205227" duration="13168000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

@@ -1,0 +1,323 @@
+<!--
+Last edited by Hirsh Kabaria (hirshvk@gmail.com) on 2019-08-04.
+
+See more  or commit changes at: https://github.com/Medajor/HHS-Clock
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automatic Clock w/ Newspaper Ad</title>
+    <style rel="stylesheet">
+        .tblCSS {margin-left: auto; margin-right: auto; font-family: Arial,sans-serif}
+        .tblCSS td{padding-left: 5px; padding-right: 5px}
+        .tblCSS td:nth-child(2){padding-right: 25px}
+    </style>
+</head>
+<body>
+<script>
+
+    //Declares the arrays
+    let RegBells = [];
+    let MonBells = [];
+    let Bells = [];
+
+    /*Bell Times
+
+    The RegBells Array is for regular-release days (ending at 3:25).
+    The MonBells Array is for early-release days (ending at 2:25).
+
+    Please add times in a 24-hr format.
+
+    Example:
+
+    (Reg/Mon)Bells[Bell#] = {};
+    (Reg/Mon)Bells[Bell#].hr = Hour;
+    (Reg/Mon)Bells[Bell#].min = Minute;
+    (Reg/Mon)Bells[Bell#].info = Period#;
+
+    */
+
+    RegBells[0] = {};
+    RegBells[0].hr = 8;
+    RegBells[0].min = 30;
+    RegBells[0].info = "Block 11/21";
+    RegBells[1] = {};
+    RegBells[1].hr = 9;
+    RegBells[1].min = 55;
+    RegBells[1].info = "To Homeroom";
+    RegBells[2] = {};
+    RegBells[2].hr = 10;
+    RegBells[2].min = 1;
+    RegBells[2].info = "Homeroom";
+    RegBells[3] = {};
+    RegBells[3].hr = 10;
+    RegBells[3].min = 11;
+    RegBells[3].info = "To Block 12/22";
+    RegBells[4] = {};
+    RegBells[4].hr = 10;
+    RegBells[4].min = 17;
+    RegBells[4].info = "Block 12/22";
+    RegBells[5] = {};
+    RegBells[5].hr = 11;
+    RegBells[5].min = 41;
+    RegBells[5].info = "To A Lunch";
+    RegBells[6] = {};
+    RegBells[6].hr = 12;
+    RegBells[6].min = 49;
+    RegBells[6].info = "To B Lunch Electives";
+    RegBells[7] = {};
+    RegBells[7].hr = 13;
+    RegBells[7].min = 12;
+    RegBells[7].info = "C Lunch Electives back in JA";
+    RegBells[8] = {};
+    RegBells[8].hr = 13;
+    RegBells[8].min = 49;
+    RegBells[8].info = "To Block 14/24";
+    RegBells[9] = {};
+    RegBells[9].hr = 13;
+    RegBells[9].min = 55;
+    RegBells[9].info = "Block 14/24";
+    RegBells[10] = {};
+    RegBells[10].hr = 15;
+    RegBells[10].min = 25;
+    RegBells[10].info = "Dismissal";
+    RegBells[11] = {};
+    RegBells[11].hr = 23;
+    RegBells[11].min = 59;
+    RegBells[11].info = "";
+
+    MonBells[0] = {};
+    MonBells[0].hr = 8;
+    MonBells[0].min = 30;
+    MonBells[0].info = "Block 11/21";
+    MonBells[1] = {};
+    MonBells[1].hr = 9;
+    MonBells[1].min = 38;
+    MonBells[1].info = "To Homeroom";
+    MonBells[2] = {};
+    MonBells[2].hr = 9;
+    MonBells[2].min = 43;
+    MonBells[2].info = "Homeroom";
+    MonBells[3] = {};
+    MonBells[3].hr = 9;
+    MonBells[3].min = 53;
+    MonBells[3].info = "To Block 12/22";
+    MonBells[4] = {};
+    MonBells[4].hr =9;
+    MonBells[4].min = 58;
+    MonBells[4].info = "Block 12/22";
+    MonBells[5] = {};
+    MonBells[5].hr = 11;
+    MonBells[5].min = 6;
+    MonBells[5].info = "To A Lunch";
+    MonBells[6] = {};
+    MonBells[6].hr = 11;
+    MonBells[6].min = 41;
+    MonBells[6].info = "To Block 13/23";
+    MonBells[7] = {};
+    MonBells[7].hr = 11;
+    MonBells[7].min = 46;
+    MonBells[7].info = "Block 13/23";
+    MonBells[8] = {};
+    MonBells[8].hr = 12;
+    MonBells[8].min = 13;
+    MonBells[8].info = "To B Lunch Electives";
+    MonBells[9] = [];
+    MonBells[9].hr = 12;
+    MonBells[9].min = 27;
+    MonBells[9].info = "Students Back from C Lunch Electives";
+    MonBells[10] = {};
+    MonBells[10].hr = 13;
+    MonBells[10].min = 1;
+    MonBells[10].info = "To Block 14/24";
+    MonBells[11] = {};
+    MonBells[11].hr = 13;
+    MonBells[11].min = 6;
+    MonBells[11].info = "Block 14/24";
+    MonBells[12] = {};
+    MonBells[12].hr = 14;
+    MonBells[12].min = 25;
+    MonBells[12].info = "Dismissal";
+    MonBells[13] = {};
+    MonBells[13].hr = 23;
+    MonBells[13].min = 59;
+    MonBells[13].info = "";
+
+    //Do Not Change From Here Down Unless You Know What You're Doing//
+
+
+    //Assigns the Bells array to MonBells on Monday, and RegBells on any other day.
+    function dayAssigner(){
+        let dayte = new Date();
+        let day = dayte.getDay();
+
+        if (day === 1) {
+            Bells = MonBells;
+        } else {
+            Bells = RegBells;
+        }
+    }
+
+    //Calls the dayAssigner function every 12hrs.
+    dayAssigner();
+    setInterval(dayAssigner, 43200000);
+
+
+    //set up clock
+    document.write('<span id="clock"></span><br>');
+
+    //Converts hours from 24-hr to 12-hr system, and outputs any 1 digit hours as "0x"
+    function apm(hr) {
+        if( hr > 12) {
+            return (hr - 12).toString().padStart(2, '0');
+        }
+        return hr.toString().padStart(2, '0');
+    }
+
+    //clock function
+    function upclock() {
+
+        //Gets the date every second
+        let dte = new Date();
+        let hrs = dte.getHours();
+        let min = dte.getMinutes();
+        let sec = dte.getSeconds();
+        let date = dte.getDate();
+        let month = dte.getMonth() + 1;
+        let year = dte.getFullYear();
+
+        const spc = " ";
+        let pm;
+        let bell;
+        let bellSound = new Audio('Assets/bell.wav');
+
+        //Figures out what the next bell is.
+        let nextBell = 0;
+        for (let i = 0; i < Bells.length; i++) {
+            if(Bells[i].hr >= hrs && Bells[i].min >= min) {
+                nextBell = i;
+                break
+            }
+        }
+
+        //AM/PM check
+        if (11 < hrs) {
+            pm = "PM";
+            hrs -= 12;
+        } else {
+            pm = "AM";
+        }
+
+        //hours go to 0 at 12
+        if (hrs === 0) hrs = "12";
+        //Adds a zero to the seconds figure.
+        if (sec <= 9) sec = "0" + sec;
+
+        //Assigns the minute figure to the next bell, and adds a zero in from of any one-digit number
+        let Bmin = Bells[nextBell].min;
+        if (Bmin <= 9) Bmin = "0" + Bmin;
+
+        //Formats the next bell display
+        bell = "<table width=60% align=center id='bell'><tr><td align =center><font face=helvetica size=3><b>Next:<br>"
+            + Bells[nextBell].info + " (" + apm(Bells[nextBell].hr) + ":" + Bmin + ")</b></font></td></tr></table>";
+
+        //Play the bell animation and sound at the proper time
+        for (let i = 0; i < Bells.length; i++) {
+            if (dte.getHours() === Bells[i].hr) {
+                if (dte.getMinutes() === Bells[i].min) {
+                    //Play sound for the first 10 seconds of the minute.
+                    if (sec < 10) {
+                        bellSound.play();
+                    }
+                    //format the bell gif.
+                    bell = "<div style=' text-align: center; margin-left: auto; margin-right: auto;  font-family: Arial," +
+                        " sans-serif; font-weight: bold; size: 3px'><img height=100 width=200 src=Assets/bell.gif><br>"
+                        + Bells[i].info +  "</div>";
+                }
+            }
+        }
+
+        //Format various parts of the time display.
+        if (min <= 9) min = "0" + min;
+        let fullDate =  month + "/" + date + "/" + year;
+        let time = hrs + ":" + min + spc + pm;
+
+        //write the page
+        clock.innerHTML = "<table width=60% align=center><tr><td align =center height=80%><font face=helvetica size=3><b>"
+            + fullDate + "</b></font></td></tr><tr><td  align =center height=80%><font face=helvetica size=6><b>" + time +
+            "</b></font></td></tr></table>"+ bell;
+
+    }
+
+    //Calls the upclock function every 1000ms.
+    setInterval(upclock, 1000);
+
+</script>
+
+<script>
+    //set up schedule table
+    document.write('<table id="tbl" class="tblCSS"></table>');
+
+    let tbl = document.getElementById("tbl");
+    let time;
+    let time2;
+    let j;
+
+    //Add times from the array into a 4-column table.
+    function scheduleTable() {
+        for (let i = 0; i < Bells.length / 2; i++) {
+            //j is the right side of the table (aka the second half of the schedule) (rounds it down too)
+            j = Math.floor(Bells.length / 2) + i;
+
+            //Assign the time variables to the time from the array, including a 12-hr conversion and a minute in the form of
+            //"0x" if it is one-digit.
+            time = apm(Bells[i].hr) + ":" + Bells[i].min.toString().padStart(2, '0');
+            time2 = apm(Bells[j].hr) + ":" + Bells[j].min.toString().padStart(2, '0');
+
+            //Remove the last entry in the array (the one at 23:59)
+            if (j === Bells.length - 1) {
+                time2 = "";
+            }
+
+            addRow(tbl, Bells[i].info, time, Bells[j].info, time2);
+        }
+    }
+
+    //Pre-made code that adds a cell to a table
+    function addCell(tr, val) {
+        const td = document.createElement('td');
+
+        td.innerHTML = val;
+
+        tr.appendChild(td)
+    }
+
+    //Pre-made code that adds a row to a table
+    function addRow(tbl, val_1, val_2, val_3, val_4) {
+        const tr = document.createElement('tr');
+
+        addCell(tr, val_1);
+        addCell(tr, val_2);
+        addCell(tr, val_3);
+        addCell(tr, val_4);
+
+        tbl.appendChild(tr)
+    }
+
+    scheduleTable();
+    setInterval(scheduleTable, 43200000)
+
+</script>
+
+<p><font face=helvetica size=2 line-height=".9"><center>
+    Order yearbooks now at HHSToday.com <br>
+    Don't forget to pick up the latest issue of the Red & Black.</center></font></p>
+
+
+<!-- Weather widget. If you want the weather to be displayed, just uncomment the next line
+<script type='text/javascript' src='https://darksky.net/widget/small/27.9906,-82.4563/us12/en.js?width=100%&height=100&title=hillsborough high school&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us'><center></center></script>
+-->
+</body>
+</HTML>
