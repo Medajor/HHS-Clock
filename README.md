@@ -7,7 +7,7 @@ As this school has two programs, one on a block schedule and one on a regular sc
 AutoDay will automatically determine if it is Monday and then show the early release schedule.
 AutoDayNewspaper will do the same, but will also display a message encouraging students to read the newspaper
 
-The rest lack this feature and simply show the schedule indicated by their name. They are mint for non-regular days.
+The rest lack this feature and simply show the schedule indicated by their name. They are meant for non-regular days.
 
 To change the schedule, just change the array at the beginning of file to your schedule. The comments in-code should guide you. 
 
