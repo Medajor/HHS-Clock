@@ -108,7 +108,7 @@ See more  or commit changes at: https://github.com/Medajor/HHS-Clock
     //clock function
     function upclock() {
 
-        //Allows the code to get the date.
+        //Gets the date every second
         let dte = new Date();
         let hrs = dte.getHours();
         let min = dte.getMinutes();
@@ -134,7 +134,7 @@ See more  or commit changes at: https://github.com/Medajor/HHS-Clock
         //AM/PM check
         if (11 < hrs) {
             pm = "PM";
-            hrs -= 12;
+            //hrs -= 12;
         } else {
             pm = "AM";
         }
@@ -171,11 +171,11 @@ See more  or commit changes at: https://github.com/Medajor/HHS-Clock
         //Format various parts of the time display.
         if (min <= 9) min = "0" + min;
         let fullDate =  month + "/" + date + "/" + year;
-        let time = hrs + ":" + min + spc + pm;
+        let time = apm(hrs) + ":" + min + spc + pm;
 
         //write the page
-        clock.innerHTML = "<table width=60% align=center><tr><td align =center height=80%><font face=helvetica size=3><b>"
-            + fullDate + "</b></font></td></tr><tr><td  align =center height=80%><font face=helvetica size=6><b>" + time +
+        clock.innerHTML = "<table width=60% align=center><tr><td align =center height=80%><font face=helvetica size=3><b>" + fullDate
+            + "</b></font></td></tr><tr><td  align =center height=80%><font face=helvetica size=12><b>" + time +
             "</b></font></td></tr></table>"+ bell;
 
     }

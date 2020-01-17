@@ -41,6 +41,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -123,6 +124,8 @@
       <workItem from="1572833529637" duration="101000" />
       <workItem from="1577841147601" duration="25000" />
       <workItem from="1577841182425" duration="614000" />
+      <workItem from="1578935042974" duration="1164000" />
+      <workItem from="1579268462790" duration="1987000" />
     </task>
     <servers />
   </component>
@@ -153,13 +156,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="960" y="432" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1577841167310" />
-    <state x="883" y="177" key="CommitChangelistDialog2" timestamp="1577841764263">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="166" y="0" key="CommitChangelistDialog2" timestamp="1579271772560">
+      <screen x="0" y="0" width="1368" height="872" />
     </state>
+    <state x="166" y="0" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1579271772560" />
     <state x="883" y="177" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1577841764263" />
+    <state x="37" y="76" key="DiffContextDialog" timestamp="1579271715027">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="37" y="76" key="DiffContextDialog/0.0.1368.872@0.0.1368.872" timestamp="1579271715027" />
     <state x="783" y="346" key="SettingsEditor" timestamp="1577841164369">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="783" y="346" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1577841164369" />
+    <state x="491" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579271696678">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="491" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1368.872@0.0.1368.872" timestamp="1579271696678" />
+    <state x="342" y="201" key="run.anything.popup" timestamp="1579268661637">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="342" y="201" key="run.anything.popup/0.0.1368.872@0.0.1368.872" timestamp="1579268661637" />
   </component>
 </project>

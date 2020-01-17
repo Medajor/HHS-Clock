@@ -160,9 +160,9 @@ See more  or commit changes at: https://github.com/Medajor/HHS-Clock
         }
     }
 
-    //Calls the dayAssigner function every 12hrs.
+    //Calls the dayAssigner function every 3hrs.
     dayAssigner();
-    setInterval(dayAssigner, 43200000);
+    setInterval(dayAssigner, 1080000);
 
 
     //set up clock
@@ -306,8 +306,15 @@ See more  or commit changes at: https://github.com/Medajor/HHS-Clock
         tbl.appendChild(tr)
     }
 
+    function removeTable() {
+        for (let i = 0; i < Bells.length / 2; i++) {
+            document.getElementById("tbl").deleteRow(0);
+        }
+    }
+
     scheduleTable();
-    setInterval(scheduleTable, 43200000)
+    setInterval(scheduleTable, 1080000);  //That should be every 3 hrs
+    setInterval(removeTable, 1080000);   //That should be every 3 hrs
 
 </script>
 

@@ -102,7 +102,7 @@ See more  or commit changes at: https://github.com/Medajor/HHS-Clock
     //clock function
     function upclock() {
 
-        //Gets the rest of the date
+        //Gets the date every second
         let dte = new Date();
         let hrs = dte.getHours();
         let min = dte.getMinutes();
@@ -114,7 +114,7 @@ See more  or commit changes at: https://github.com/Medajor/HHS-Clock
         const spc = " ";
         let pm;
         let bell;
-        let bellSound = new Audio('Assets/pbjtime.mp3');
+        let bellSound = new Audio('Assets/bell.wav');
 
         //Figures out what the next bell is.
         let nextBell = 0;
@@ -128,7 +128,7 @@ See more  or commit changes at: https://github.com/Medajor/HHS-Clock
         //AM/PM check
         if (11 < hrs) {
             pm = "PM";
-            hrs -= 12;
+            //hrs -= 12;
         } else {
             pm = "AM";
         }
@@ -156,7 +156,7 @@ See more  or commit changes at: https://github.com/Medajor/HHS-Clock
                     }
                     //format the bell gif.
                     bell = "<div style=' text-align: center; margin-left: auto; margin-right: auto;  font-family: Arial," +
-                        " sans-serif; font-weight: bold; size: 3px'><img height=100 width=200 src=Assets/pbjtime.gif><br>"
+                        " sans-serif; font-weight: bold; size: 3px'><img height=100 width=200 src=Assets/bell.gif><br>"
                         + Bells[i].info +  "</div>";
                 }
             }
@@ -165,11 +165,11 @@ See more  or commit changes at: https://github.com/Medajor/HHS-Clock
         //Format various parts of the time display.
         if (min <= 9) min = "0" + min;
         let fullDate =  month + "/" + date + "/" + year;
-        let time = hrs + ":" + min + spc + pm;
+        let time = apm(hrs) + ":" + min + spc + pm;
 
         //write the page
-        clock.innerHTML = "<table width=60% align=center><tr><td align =center height=80%><font face=helvetica size=3><b>"
-            + fullDate + "</b></font></td></tr><tr><td  align =center height=80%><font face=helvetica size=6><b>" + time +
+        clock.innerHTML = "<table width=60% align=center><tr><td align =center height=80%><font face=helvetica size=3><b>" + fullDate
+            + "</b></font></td></tr><tr><td  align =center height=80%><font face=helvetica size=12><b>" + time +
             "</b></font></td></tr></table>"+ bell;
 
     }
